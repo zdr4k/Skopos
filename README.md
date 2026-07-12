@@ -49,6 +49,7 @@ Create a Fine-grained personal access tokens with `models` read-only permission.
 **4. Add a secret**
 
 Go to Settings → Secrets and variables → Actions → New repository secret
+
 Name: `GH_MODELS_TOKEN`  
 value: The personal access token.
 
@@ -62,7 +63,7 @@ Edit `allowed_domains.txt` and add the domains you have authorization to scan.
 
 **5. Run**
 
-Create a new issue using the **Recon Request** template, add the `recon` label, and wait 2-3 minutes. The report will appear as a comment and be saved to `reports/`.
+Create a new issue using the **Recon Request** template, add the `recon` label, and wait 3-5 minutes. The report will appear as a comment and be saved to `reports/`.
 
 ## Project structure
 
