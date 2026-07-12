@@ -12,7 +12,7 @@ def run_nmap(target: str) -> str:
             "--version-intensity", "7",
             target
         ],
-        capture_output=True, text=True, timeout=240
+        capture_output=True, text=True, timeout=300
     )
     return result.stdout or result.stderr
 
