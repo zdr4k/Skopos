@@ -5,14 +5,13 @@ def run_nmap(target: str) -> str:
         [
             "sudo", "nmap",
             "-sSV",
-            "-sU",
-            "-p", "T:1-1000,U:53,161,123,500,1194",
+            "-top-ports", "1000",
             "-Pn",
             "-T4",
             "--version-intensity", "7",
             target
         ],
-        capture_output=True, text=True, timeout=180
+        capture_output=True, text=True, timeout=240
     )
     return result.stdout or result.stderr
 
