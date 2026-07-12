@@ -4,10 +4,9 @@ def run_nmap(target: str) -> str:
     result = subprocess.run(
         [
             "sudo", "nmap",
-            "-sSV",              
-            "-sU",               
-            "--top-ports", "100",
-            "-p", "U:53,161,123,500,1194",
+            "-sSV",
+            "-sU",
+            "-p", "T:1-1000,U:53,161,123,500,1194",
             "-Pn",
             "-T4",
             "--version-intensity", "7",
