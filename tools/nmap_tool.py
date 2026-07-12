@@ -5,7 +5,8 @@ def run_nmap(target: str) -> str:
         [
             "sudo", "nmap",
             "-sSV",
-            "--top-ports", "1000",
+            "-sU",
+            "-p", "T:1-1000,U:53,161,123,500,1194",
             "-Pn",
             "-T4",
             "--version-intensity", "7",
