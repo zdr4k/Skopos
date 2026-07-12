@@ -12,7 +12,7 @@ permissions:
 jobs:
   recon:
     runs-on: ubuntu-latest
-    if: contains(github.event.issue.labels.*.name, 'recon')
+    if: github.event.issue.title == 'Recon Request'
 
     steps:
       - name: Checkout
