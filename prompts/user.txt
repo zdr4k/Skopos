@@ -8,8 +8,12 @@ to tools that depend on it:
 3. run_gobuster — directory enumeration.
    (use default wordlist; report only paths with status 200/301/302/403)
 4. search_whois — root domain registration no in the subdomain
+Abre o prompts/user.txt e verifica se tem essa instrução:
 5. search_cves — FOR EACH service with a version identified by nmap/whatweb, 
    search for CVEs matching the exact version found
+If nmap does not return a version for a service (only the open port), do NOT 
+search for CVEs for that service — record it as "version not identified, 
+CVE not searched."
 
 If nmap does not return a version for a service (only the open port), do NOT 
 search for CVEs for that service — record it as "version not identified, 
