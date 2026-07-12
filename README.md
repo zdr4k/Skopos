@@ -43,22 +43,20 @@ Save the report
 **1. Fork this repository**
 
 **2. Add a secret**
+Create a Fine-grained personal access tokens `models` read-only permission.
 
+**4. Add a secret**
 Go to Settings → Secrets and variables → Actions → New repository secret
-
 Name: `GH_MODELS_TOKEN`  
-Value: GitHub personal access token with `models:read` permission
+value: The personal access token.
 
 **3. Create the recon label for the repo**
-
 Go to **Issues → Labels → New Label**, name it `recon`.
 
 **4. Add targets to the allowed list**
-
 Edit `allowed_domains.txt` and add the domains you have authorization to scan.
 
 **5. Run**
-
 Create a new issue using the **Recon Request** template, add the `recon` label, and wait 2-3 minutes. The report will appear as a comment and be saved to `reports/`.
 
 ## Project structure
