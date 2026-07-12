@@ -1,0 +1,19 @@
+name: Recon Request
+description: Request a reconnaissance scan
+labels: ["recon"]
+body:
+  - type: input
+    id: target
+    attributes:
+      label: Target
+      description: Domain or IP to scan
+      placeholder: scanme.nmap.org
+    validations:
+      required: true
+  - type: textarea
+    id: notes
+    attributes:
+      label: Additional notes
+      description: Any specific areas of interest
+    validations:
+      required: false

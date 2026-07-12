@@ -1,0 +1,30 @@
+Perform a complete reconnaissance on {target} and generate a structured security report.
+
+Run the tools in the following order, waiting for each result before proceeding 
+to tools that depend on it:
+
+1. run_nmap — enumerate open ports and services.
+2. run_whatweb — web technology fingerprinting.
+3. run_gobuster — directory enumeration.
+   (use default wordlist; report only paths with status 200/301/302/403)
+4. search_whois — root domain registration no in the subdomain
+5. search_cves — FOR EACH service with a version identified by nmap/whatweb, 
+   search for CVEs matching the exact version found
+
+If nmap does not return a version for a service (only the open port), do NOT 
+search for CVEs for that service — record it as "version not identified, 
+CVE not searched."
+
+Generate the report in markdown with these sections:
+
+- **Executive Summary** — 3-5 sentences, only tool-confirmed facts
+- **Open Ports & Services** — table: port | protocol | service | version | source (nmap)
+- **Whatweb** — technologies identified, with confidence level if the tool provides one
+- **Gobuster** — paths found with status code
+- **WHOIS Information** — only data returned by the tool
+- **CVE Findings** — table: service/version | CVE ID | severity | source
+- **Risk Assessment** — your analysis, clearly labeled as interpretation
+- **Recommendations** — concrete actions tied to the findings above (not generic)
+
+If any tool fails or returns no data, state this explicitly in the corresponding 
+section instead of omitting the section or fabricating a plausible result.
